@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Everyone</title>
+  <meta name="description" content="A friendly, jargon-free guide to the AI you meet every day, with a 2-minute quiz and simple tips for staying safe.">
+  <meta property="og:title" content="AI for Everyone">
+  <meta property="og:description" content="Understand everyday AI in plain English. Take the 2-minute quiz and learn how to stay safe.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">🤖 AI for Everyone</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#what-is-ai">What is AI?</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#stay-safe">Stay safe</a></li>
+          <li><a href="#learn-more">Learn more</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <h1>AI is already part of your day. Let's make sense of it.</h1>
+        <p>From the words your phone suggests to the videos you're shown online, AI is everywhere. This short, jargon-free guide helps you understand it and use it safely.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#quiz">Take the 2-minute quiz</a>
+          <a class="btn btn-outline" href="#what-is-ai">What is AI?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= What is AI? ================= -->
+    <section class="section" id="what-is-ai">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The basics</span>
+          <h2>What is AI, really?</h2>
+          <p>No robots taking over. Here's what AI actually is, in plain English.</p>
+        </div>
+        <div class="grid">
+          <article class="info-card">
+            <span class="icon" aria-hidden="true">🧠</span>
+            <h3>What it is</h3>
+            <p>AI is computer software that learns from huge numbers of examples. It spots patterns and makes very good guesses, but it doesn't think or feel like a person.</p>
+          </article>
+          <article class="info-card">
+            <span class="icon" aria-hidden="true">📱</span>
+            <h3>Where you meet it</h3>
+            <p>Predictive text, voice assistants, spam filters, sat-nav routes, "you might also like" suggestions and chatbots all use AI.</p>
+          </article>
+          <article class="info-card">
+            <span class="icon" aria-hidden="true">✅</span>
+            <h3>What it's good at</h3>
+            <p>Quick, repetitive jobs like summarising text, translating, drafting emails, sorting photos and answering everyday questions.</p>
+          </article>
+          <article class="info-card">
+            <span class="icon" aria-hidden="true">⚠️</span>
+            <h3>Where it goes wrong</h3>
+            <p>It can state wrong facts confidently, repeat unfair biases from its training examples, and be used to make convincing fakes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Quiz ================= -->
+    <section class="section alt" id="quiz">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Test yourself</span>
+          <h2>How AI-savvy are you?</h2>
+          <p>Five quick questions. No tech knowledge needed.</p>
+        </div>
+
+        <div class="quiz-card">
+          <!-- 1. Start screen -->
+          <div id="start-screen">
+            <h3>🤖 Ready?</h3>
+            <p>Pick the answer that sounds most sensible. You'll see a short explanation after each one.</p>
+            <button class="btn" id="start-btn">Start the quiz</button>
+          </div>
+
+          <!-- 2. Question screen -->
+          <div id="quiz-screen" class="hidden">
+            <div class="progress-label" id="progress-label">Question 1 of 5</div>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+            <h2 id="question-text"></h2>
+            <div class="options" id="options"></div>
+
+            <!-- aria-live makes screen readers announce the feedback -->
+            <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+
+            <button class="btn hidden" id="next-btn">Next question →</button>
+          </div>
+
+          <!-- 3. Results screen -->
+          <div id="result-screen" class="hidden">
+            <h3>Your result</h3>
+            <div class="score" id="score-text"></div>
+            <p id="score-message"></p>
+            <ul class="review" id="review-list"></ul>
+            <button class="btn" id="restart-btn">Try again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Stay safe ================= -->
+    <section class="section" id="stay-safe">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Good habits</span>
+          <h2>5 simple ways to stay safe with AI</h2>
+          <p>You don't need to be an expert. These habits go a long way.</p>
+        </div>
+        <ul class="tips">
+          <li>
+            <span class="icon" aria-hidden="true">🔍</span>
+            <div>
+              <h3>Double-check the facts</h3>
+              <p>AI can sound sure of itself and still be wrong. For anything important (health, money, the law), check a trusted source.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">🔒</span>
+            <div>
+              <h3>Keep personal info private</h3>
+              <p>Never type passwords, bank details, ID numbers or private family information into a chatbot.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">🎭</span>
+            <div>
+              <h3>Question shocking videos and voices</h3>
+              <p>AI can fake faces and voices. If a clip or phone call seems surprising or urgent, pause and check before you believe it or share it.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">⚖️</span>
+            <div>
+              <h3>Remember AI can be unfair</h3>
+              <p>AI learns from human examples, including our biases. Be wary when it's used to judge people, such as in job or loan decisions.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">🙋</span>
+            <div>
+              <h3>You're in charge</h3>
+              <p>Treat AI as a helpful assistant, not the boss. You make the final decision.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Learn more ================= -->
+    <section class="section alt" id="learn-more">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Keep going</span>
+          <h2>Want to learn more?</h2>
+          <p>Beginner-friendly places to keep learning. They all open in a new tab.</p>
+        </div>
+        <div class="grid">
+          <a class="info-card resource" href="https://www.elementsofai.com/" target="_blank" rel="noopener">
+            <span class="tag">Free online course</span>
+            <h3>Elements of AI</h3>
+            <p>A popular course for complete beginners, made by the University of Helsinki. No maths or coding needed.</p>
+            <span class="go">Visit site →</span>
+          </a>
+          <a class="info-card resource" href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" rel="noopener">
+            <span class="tag">Free to audit</span>
+            <h3>AI For Everyone (Coursera)</h3>
+            <p>Andrew Ng's short non-technical course on what AI can and can't do. Watching the course is free, and the certificate costs extra.</p>
+            <span class="go">Visit site →</span>
+          </a>
+          <a class="info-card resource" href="https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online" target="_blank" rel="noopener">
+            <span class="tag">Free guide</span>
+            <h3>Staying secure online (NCSC)</h3>
+            <p>The UK National Cyber Security Centre's simple tips for protecting your accounts and spotting scams.</p>
+            <span class="go">Visit site →</span>
+          </a>
+          <a class="info-card resource" href="https://grow.google/ai-essentials/" target="_blank" rel="noopener">
+            <span class="tag">Paid course</span>
+            <h3>Google AI Essentials</h3>
+            <p>A short, practical course by Google on using AI tools at work. There's a fee, and financial aid may be available.</p>
+            <span class="go">Visit site →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AI for Everyone, a plain-English guide to everyday AI.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
