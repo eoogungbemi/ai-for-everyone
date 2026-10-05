@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-10-05T20:15:35+00:00",
+  "model": "llama3.2:3b",
+  "count": 10,
+  "questions": [
+    {
+      "id": "ai-003",
+      "topic": "what AI is and is not",
+      "question": "What is NOT true about how AI learns?",
+      "options": [
+        "It does think and feel.",
+        "It learns from experience",
+        "It uses rules to solve problems",
+        "It's a machine that learns from data",
+        "It's a type of computer program"
+      ],
+      "answer": "It does think and feel.",
+      "explanation": "AI is a machine that learns patterns from examples, but it doesn't have thoughts or feelings like humans do.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-007",
+      "topic": "everyday places people already use AI",
+      "question": "How does a streaming service's 'Music Like This' suggestion feature typically use AI?",
+      "options": [
+        "By analyzing your past listening habits",
+        "By asking your friends what music they like",
+        "By looking at what music is currently popular",
+        "By using a list of generic music genres",
+        "By randomly guessing music"
+      ],
+      "answer": "By analyzing your past listening habits",
+      "explanation": "The AI analyzes your past listening habits to give you music recommendations. It looks at what you've listened to and suggests similar music.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-010",
+      "topic": "AI chatbots making up facts that sound convincing, and how to double-check them",
+      "question": "How can you double-check information given to you by an AI chatbot?",
+      "options": [
+        "Check the source of the information, and see if it matches what you know from other reliable sources.",
+        "Just ask the chatbot the same question again",
+        "Try to remember if you heard the information before",
+        "Check if the chatbot has any ads or links attached",
+        "Look for a 'source' button that says 'we made this up'"
+      ],
+      "answer": "Check the source of the information, and see if it matches what you know from other reliable sources.",
+      "explanation": "You should verify the information with other sources to make sure it's accurate and not made up by the chatbot. Checking the source can help you determine if the information is true or not.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-019",
+      "topic": "phone and message scams that use AI-cloned voices of family members",
+      "question": "A scammer uses an AI-cloned voice of a family member to convince you to send money. What should you do?",
+      "options": [
+        "Don't send money",
+        "Send money immediately",
+        "Ask for more information",
+        "Meet the scammer in person",
+        "Try to figure out who the scammer really is"
+      ],
+      "answer": "Don't send money",
+      "explanation": "You should not send money to someone claiming to be a family member. Verify the identity before sending any money. It's also a good idea to talk to the family member yourself to confirm the story.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-021",
+      "topic": "phone and message scams that use AI-cloned voices of family members",
+      "question": "What is the likely purpose of an AI-cloned voice of a family member being used to scam you?",
+      "options": [
+        "To trick you into sending money",
+        "To warn you of a problem with your phone",
+        "To ask for a favor",
+        "To try and sell you something",
+        "To apologize for a mistake"
+      ],
+      "answer": "To trick you into sending money",
+      "explanation": "Scammers use AI-cloned voices to create a false sense of urgency and trust, often asking for money to 'fix' a problem that doesn't exist. This can lead to you sending money to the scammer. You should never send money to someone you don't trust, even if they claim to be a family member.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-022",
+      "topic": "bias and unfairness in AI, for example in job or loan decisions",
+      "question": "What is the problem that occurs when an AI system makes decisions that are unfair to certain groups of people?",
+      "options": [
+        "Bias",
+        "Error",
+        "Incorrect Data",
+        "Algorithm Flaw",
+        "Computer Glitch"
+      ],
+      "answer": "Bias",
+      "explanation": "Bias in AI refers to when a system makes unfair decisions because of how it was trained or designed. It can lead to unequal treatment of certain groups of people.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-024",
+      "topic": "bias and unfairness in AI, for example in job or loan decisions",
+      "question": "What is a common way AI systems can make unfair decisions?",
+      "options": [
+        "Using biased training data",
+        "Looking at past decisions made by the person who trained the AI",
+        "Considering personal data that the AI has access to",
+        "Using outdated or incorrect information",
+        "Making decisions based on what's most convenient for the AI system"
+      ],
+      "answer": "Using biased training data",
+      "explanation": "AI systems can learn from biased training data, which means they might make unfair decisions based on that data. If the data is biased, the AI system will likely make biased decisions too.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-026",
+      "topic": "recommendation feeds on social media and video apps, and why they show you what they show you",
+      "question": "Why do social media and video apps show you posts from accounts you don't follow?",
+      "options": [
+        "They try to keep you interested and engaged.",
+        "They want to sell your personal info to advertisers.",
+        "They think you'll be sad if you don't see posts about your friends.",
+        "They're trying to trick you into following them.",
+        "They're too lazy to show you posts from accounts you actually follow."
+      ],
+      "answer": "They try to keep you interested and engaged.",
+      "explanation": "Recommendation feeds want to keep you interested, so they show you posts that are likely to engage you. This can lead to people seeing posts from accounts they don't even know, which can be misleading.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-030",
+      "topic": "using AI as a helpful assistant while a human stays in charge of decisions",
+      "question": "What is the benefit of using AI as a helpful assistant when a human is still in charge of decisions?",
+      "options": [
+        "AI provides data and suggestions to help humans make better decisions",
+        "AI makes all the decisions on its own",
+        "AI just sits there and does nothing",
+        "AI replaces humans entirely",
+        "AI just answers basic questions"
+      ],
+      "answer": "AI provides data and suggestions to help humans make better decisions",
+      "explanation": "AI helps humans by providing information and ideas to consider. Humans still make the final decisions.",
+      "source": "ai"
+    },
+    {
+      "id": "ai-033",
+      "topic": "using AI as a helpful assistant while a human stays in charge of decisions",
+      "question": "When using AI as a helpful assistant, what should a human do with its recommendations?",
+      "options": [
+        "Evaluate and adjust the recommendation",
+        "Accept the recommendation",
+        "Ignore the recommendation",
+        "Share the recommendation with others",
+        "Automatically implement the recommendation"
+      ],
+      "answer": "Evaluate and adjust the recommendation",
+      "explanation": "A human should carefully consider and possibly change the AI's recommendation to make sure it fits your needs.",
+      "source": "ai"
+    }
+  ],
+  "reviewed_at": "2026-10-05T20:16:32+00:00",
+  "review_note": "Fact-checked by Claude (AI assistant), pending the site owner's review: kept 10 of 37 generated questions. Removed ones gave unsafe advice, had more than one defensible answer, or had misleading explanations."
+}

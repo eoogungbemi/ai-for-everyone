@@ -1,15 +1,16 @@
 // =========================================================
 // AI for Everyone: site script
-// Part A: the quiz (unchanged from standalone-quiz.html)
+// Part A: the quiz. Each round draws 5 random questions from the built-in
+//         ones plus the AI-generated bank in questions.json
 // Part B: small site behaviours (mobile menu, footer year)
 // =========================================================
 
 // ======================= Part A: Quiz =======================
 
-// ---- 1. The quiz content --------------------------------------------
+// ---- 1. The built-in questions (always available) ---------------------
 // To add or change a question, edit this list.
 // "answer" is the exact text of the correct option.
-const questions = [
+const builtInQuestions = [
   {
     question: "What is AI (Artificial Intelligence)?",
     options: [
@@ -72,6 +73,43 @@ const questions = [
   }
 ];
 
+// ---- 1b. The AI-generated question bank -------------------------------
+// questions.json is made by generator/generate_questions.py with a local AI
+// model (Ollama). If it can't load (e.g. the page was opened by
+// double-clicking the file), the quiz simply uses the built-in questions.
+const ROUND_SIZE = 5;
+let questionPool = builtInQuestions;
+let questions = builtInQuestions;   // the questions in the current round
+
+// Skip any bank entry that's malformed, so one bad question can't break the quiz
+function isValidQuestion(q) {
+  return q && typeof q.question === "string" && typeof q.explanation === "string" &&
+    Array.isArray(q.options) && q.options.length >= 2 &&
+    q.options.every(o => typeof o === "string") && q.options.includes(q.answer);
+}
+
+async function loadQuestionBank() {
+  try {
+    const res = await fetch("questions.json", { cache: "no-cache" });
+    if (!res.ok) return;
+    const data = await res.json();
+    const extra = (data.questions || []).filter(isValidQuestion);
+    questionPool = [...builtInQuestions, ...extra];
+  } catch (err) {
+    // No bank available: the built-in questions still work.
+  }
+  updatePoolNote();
+}
+
+// Tell visitors where the questions come from
+function updatePoolNote() {
+  const aiCount = questionPool.filter(q => q.source === "ai").length;
+  $("pool-note").textContent = aiCount
+    ? `Each round picks ${ROUND_SIZE} at random from ${questionPool.length} questions. ` +
+      `${aiCount} of them were written by a small AI model and are marked "🤖 AI-written".`
+    : "";
+}
+
 // ---- 2. Grab the page elements we need --------------------------------
 const $ = (id) => document.getElementById(id);
 const startScreen  = $("start-screen");
@@ -83,6 +121,7 @@ const feedbackBox  = $("feedback");
 const nextBtn      = $("next-btn");
 const progressLbl  = $("progress-label");
 const progressFill = $("progress-fill");
+const aiBadge      = $("ai-badge");
 
 // ---- 3. Quiz state: where we are and how we're doing ------------------
 let state = { index: 0, score: 0, answers: [] };
@@ -110,6 +149,7 @@ function showQuestion() {
   progressLbl.textContent = `Question ${state.index + 1} of ${questions.length}`;
   progressFill.style.width = `${(state.index / questions.length) * 100}%`;
   questionText.textContent = q.question;
+  aiBadge.classList.toggle("hidden", q.source !== "ai");
 
   // Reset feedback, the Next button and the old options
   feedbackBox.className = "feedback hidden";
@@ -200,6 +240,7 @@ function showResults() {
 
 // ---- 8. Start / restart ------------------------------------------------
 function start() {
+  questions = shuffle(questionPool).slice(0, ROUND_SIZE);   // a fresh random round
   state = { index: 0, score: 0, answers: [] };
   showScreen(quizScreen);
   showQuestion();
@@ -208,6 +249,7 @@ function start() {
 $("start-btn").addEventListener("click", start);
 $("restart-btn").addEventListener("click", start);
 nextBtn.addEventListener("click", next);
+loadQuestionBank();
 
 // ======================= Part B: Site =======================
 

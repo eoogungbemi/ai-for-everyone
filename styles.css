@@ -348,6 +348,20 @@ section[id] { scroll-margin-top: var(--header-h); }
 
 .options { display: grid; gap: 10px; }
 
+/* Label on questions written by the local AI model */
+.ai-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.pool-note { font-size: 0.9rem; }
+.pool-note:empty { display: none; }
+
 .option {
   display: flex;
   align-items: center;
